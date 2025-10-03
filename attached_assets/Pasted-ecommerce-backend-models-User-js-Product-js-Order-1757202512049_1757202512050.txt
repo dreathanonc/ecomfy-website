@@ -1,0 +1,107 @@
+ecommerce/
+├── backend/
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Product.js
+│   │   ├── Order.js
+│   │   └── Category.js
+│   ├── routes/
+│   │   ├── users.js
+│   │   ├── products.js
+│   │   ├── orders.js
+│   │   └── categories.js
+│   ├── server.js
+│   └── package.json
+├── frontend/
+│   ├── index.html          # homepage menampilkan produk
+│   ├── products.html       # halaman katalog produk
+│   ├── cart.html           # keranjang belanja
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── app.js
+└── README.md
+⚙️ Backend (Express + MongoDB)
+Models
+
+User: username, email, password (bcrypt), role (admin/user).
+
+Category: name, description.
+
+Product: name, description, price, image, categoryId (relasi ke Category).
+
+Order: userId, products[], totalPrice, status.
+
+Routes
+
+/users → register, login.
+
+/categories → CRUD kategori (admin only).
+
+/products → CRUD produk (admin), list produk dengan search & filter by kategori, harga.
+
+/orders → buat order (user), list order (admin).
+
+Auth
+
+JWT untuk login.
+
+Role-based access (admin vs user).
+
+🎨 Frontend (HTML, CSS, Vanilla JS)
+Index Page
+
+Navbar (Home, Products, Cart, Login/Register).
+
+Hero banner.
+
+Grid produk (4 produk per baris, responsive).
+
+Products Page
+
+Dropdown kategori.
+
+Search bar.
+
+Produk ditampilkan dalam grid layout (4 kolom).
+
+Filter berdasarkan kategori & search.
+
+Cart Page
+
+Daftar produk yang ditambahkan.
+
+Total harga.
+
+Tombol checkout.
+
+Style (CSS Grid)
+
+Desktop: 4 produk / baris.
+
+Tablet: 2 produk / baris.
+
+Mobile: 1 produk / baris.
+
+Interaktif (JS)
+
+Fetch produk dari backend via API.
+
+Search + filter produk tanpa reload.
+
+Tambah produk ke cart (localStorage).
+
+📘 Tambahkan File: SETUP_LOCAL.md
+Isi file ini dengan tutorial setup lokal di VSCode Linux Mint, termasuk:
+
+Clone repo dari GitHub.
+
+Masuk ke folder backend/, jalankan npm install.
+
+Jalankan MongoDB lokal dengan mongod.
+
+Start server dengan npm run dev.
+
+Buka frontend/index.html di browser untuk lihat hasil.
+
+⚡ Pastikan project ini berjalan offline dengan MongoDB lokal, tidak pakai MongoDB Atlas.
